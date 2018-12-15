@@ -19,9 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = '数据科学总结'
-copyright = '2018, Huang Xinyuan'
-author = 'Huang Xinyuan'
+project = u'数据科学总结'
+copyright = u'2018, Huang Xinyuan'
+author = u'Huang Xinyuan'
 
 # The short X.Y version
 version = ''
@@ -130,8 +130,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx.tex', '数据科学总结 Documentation',
-     'Huang Xinyuan', 'manual'),
+    (master_doc, 'sphinx.tex', u'数据科学总结 Documentation',
+     u'Huang Xinyuan', 'manual'),
 ]
 
 
@@ -140,7 +140,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx', '数据科学总结 Documentation',
+    (master_doc, 'sphinx', u'数据科学总结 Documentation',
      [author], 1)
 ]
 
@@ -151,7 +151,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx', '数据科学总结 Documentation',
+    (master_doc, 'sphinx', u'数据科学总结 Documentation',
      author, 'sphinx', 'One line description of project.',
      'Miscellaneous'),
 ]
