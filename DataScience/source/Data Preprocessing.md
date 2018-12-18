@@ -55,3 +55,13 @@ df['discount_rate'] = df['Discount_rate'].apply(getDiscountType)
 # 其中Discount_rate是已有的列，discount_rate将会是对Discount_rate列处理后的新生成的列
 # 处理函数是getDiscountType
 ```
+
+## 统一时间格式
+
+我们导入csv或者Excel的时间格式可能多种多样，并不统一，可以使用Pandas的`to_datetime`来统一时间格式
+
+```python
+date_received_dt = pd.to_datetime(date_received, format='%Y%m%d')
+#一共有6个参数，还有%H:%M:%S，前三个参数是必填的，后面三个参数不填默认为0
+```
+
