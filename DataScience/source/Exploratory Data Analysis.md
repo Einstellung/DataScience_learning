@@ -1,10 +1,19 @@
 # 探索性数据分析
 
-## 不重复显示某一列的信息
+## 对单独一列信息的探索
+### 去一列信息去重后显示（去掉该列信息中重复的值）
 
 ```python
 print('Discount_rate 类型:',dfoff['Discount_rate'].unique()) #dfoff是打开的某pandas文件
 ```
+
+### 统计该列中各个值出现的次数
+使用`value_counts()`方法就可以。这个方法可以用于计数。这是Pandas内置的方法，用Pandas读取完文件之后就可以直接调用这个方法。
+
+```python
+dfoff['label'].value_counts()
+```
+
 
 ## 比较两列的数据信息（对重复数值聚合）以及画图显示
 
@@ -33,6 +42,15 @@ Date_received	Date
 ```
 这里说一下`as_index`这个参数，如果改成`True`的话，被groupby的那一列会单独成为一列。如果是`False`的话，则不会单独成为一列。
 
+## 对多列数据进行分析
+
+### 显示总计有多少个特征
+
+一般情况下，数据的第一行表示的是特征。如果想用列表的形式显示特征可以使用Pandas的`tolist()`进行转换：
+
+```python
+dfoff.columns.tolist() #dfoff是用Pandas读取的csv数据
+```
 
 
 

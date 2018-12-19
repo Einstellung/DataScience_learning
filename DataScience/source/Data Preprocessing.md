@@ -56,7 +56,9 @@ df['discount_rate'] = df['Discount_rate'].apply(getDiscountType)
 # 处理函数是getDiscountType
 ```
 
-## 统一时间格式
+### 涉及时间操作
+
+### 统一时间格式
 
 我们导入csv或者Excel的时间格式可能多种多样，并不统一，可以使用Pandas的`to_datetime`来统一时间格式
 
@@ -64,4 +66,23 @@ df['discount_rate'] = df['Discount_rate'].apply(getDiscountType)
 date_received_dt = pd.to_datetime(date_received, format='%Y%m%d')
 #一共有6个参数，还有%H:%M:%S，前三个参数是必填的，后面三个参数不填默认为0
 ```
+我们用这个操作来统一时间格式还有一个作用在于我们从csv或者Excel中读取的日期数据很有可能是字符串类型，字符串类型是没有办法进行加减乘除操作的。我们通过这种类型转换之后，就变成了`Timedelta`类型的格式，结果类似于这个样子:
 
+```python
+Timedelta('166 days 00:00:00')
+```
+可以进行加减乘除操作。关于如何进行比较操作，和对单独某个值转换成`Timedelta`会在下一部分说。
+
+
+### 时间之间的比较
+
+只有时间类型的数据才能和时间类型的数据进行比较，因此比较之前需要先将数据转换成`Timedelta`类型的格式。转换和比较方法如下：
+
+```python
+# td是已经转换为Timedelta类型的数据，我们这里想要看td的数值是不是比15天多。
+#和统一时间格式那里写的一样，Timedelta方法也可以设置6种参数(YMD、Hms)来确定时间，其中M表示的是月，m表示的是分钟
+
+td = pd.to_datetime(row['Date'], format='%Y%m%d') -  pd.to_datetime(row['Date_received'], format='%Y%m%d')
+if td <= pd.Timedelta(15, 'D'):
+    return 1
+```
