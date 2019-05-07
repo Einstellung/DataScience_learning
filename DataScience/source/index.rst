@@ -7,7 +7,7 @@
    
    Data Preprocessing
    Exploratory Data Analysis
-   Least Square Method
+   
 	
 
 
