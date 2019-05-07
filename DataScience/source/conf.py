@@ -182,6 +182,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # -- Options for LaTeX output ------------------------------------------------
 
+latex_engine = 'xelatex'
 latex_elements={# The paper size ('letterpaper' or 'a4paper').
 'papersize':'a4paper',# The font size ('10pt', '11pt' or '12pt').
 'pointsize':'12pt','classoptions':',oneside','babel':'',#必須
